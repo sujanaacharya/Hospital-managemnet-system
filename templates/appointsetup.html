@@ -1,0 +1,100 @@
+<link rel="stylesheet" type="text/css" href="/static/patient1.css">
+<link rel="stylesheet" type="text/css" href="/static/admin2.css">
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title> ABCD HOSPITALS </title>
+   </head>
+
+
+      <body>
+	  <div class = 'heading'>
+	  
+<div class =  'ambulance' >
+<img src="static\photos\amb.gif" class = "ambgif">
+<br>
+Call Ambulance<br>+977 9845634516
+</div>	  
+
+
+<img src="static\photos\logo.gif" class =  'logogif'>
+                      <p class="mainheading">  ABCD HOSPITALS</p>
+<p class = 'subcat'> 'Empowering People to Improve Their Lives'<br>Contact No: 01-488515, +977 9856745256</p>
+</div>
+	  
+	  
+	   
+
+	 
+<div class = "takeappointment">
+
+	<div class = "DisplayappointmentTableHere"><br><br>
+	<br>
+    <table class="iddescriptiontable">
+
+        <tr>
+            <th>
+               Appointment ID
+            </th>
+        <th>
+            Date
+        </th>
+        <th>
+           Time
+        </th>
+        <th>
+           First Name
+         </th>
+         <th>
+            Last Name
+         </th>
+        <th>
+           Department
+        </th>
+        <th>
+            Qualification
+         </th>
+         <th>
+            Experience
+         </th>
+        </tr>
+        
+        {% for i in bb %}
+        <tr>
+            {% for j in i %}
+         
+                <td>
+        {{j}}
+                </td>
+                {% endfor %}
+        </tr>
+        {% endfor %}
+        
+        
+        </table>
+	
+	<br><br>
+	<!-- *************************************ADD appointment ---------------------------------------*-->
+	<form id= "form1" name="accform" autocomplete="off"   action="takeapp" method="post">
+		{% csrf_token %}
+  <p class="topic_subgroup">Add appointment::</p><br> 
+            
+<input type = 'text' class="subgroup_detail" name ='aid' placeholder="Appointment ID"  maxlength='20'>
+
+<br><br>
+<div class="btn-box">
+<button  id="next1" type="submit"  class = "subgroup_but">+ Add</button> 
+
+</div>
+
+
+</form>
+	
+	
+	</div>
+	
+	
+</div>
